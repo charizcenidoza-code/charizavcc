@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chariz Anne Ceñidoza | Portfolio & Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* --- CSS STYLING --- */
+        :root {
+            --primary-pink: #ff69b4; /* Hot Pink */
+            --light-pink: #ffe4e1; /* Misty Rose (for body background) */
+            --subtle-pink: #ffffff; /* **CHANGED: Category Box Background to PURE WHITE** */
+            --text-dark: #333;
+            --text-medium: #555;
+            --text-light: #fff;
+            --font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--light-pink);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* --- INLINE NAVIGATION (Inside About Section) --- */
+        .inline-nav {
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: center;
+            gap: 10px; 
+            margin-top: 20px; /* Space above navigation */
+            padding: 15px 0; /* Vertical padding inside the box */
+            border-top: 1px dashed #ffc0cb; /* Neat divider line */
+            border-bottom: 1px dashed #ffc0cb;
+            margin-bottom: 10px;
+        }
+
+        .inline-nav a {
+            text-decoration: none;
+            color: var(--primary-pink);
+            font-weight: 600;
+            padding: 8px 15px;
+            border: 1px solid #ffc0cb;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+            font-size: 0.9em;
+            background-color: #fff; /* White button background */
+        }
+
+        .inline-nav a:hover {
+            background-color: var(--primary-pink);
+            color: var(--text-light);
+            border-color: var(--primary-pink);
+        }
+        /* --- END INLINE NAVIGATION --- */
+        
+        /* --- CONTEXTUAL SECTION NAVIGATION (Bottom of each box) --- */
+        .section-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 1px dashed #ffc0cb;
+        }
+
+        .section-nav a {
+            color: var(--primary-pink);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9em;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .section-nav a i {
+            margin: 0 5px;
+        }
+
+        .section-nav a:hover {
+            background-color: #fff0f5;
+        }
+        /* --- END CONTEXTUAL NAVIGATION --- */
+
+        /* Subtle Cute Box Styling (Category Box) */
+        .category-box {
+            background-color: var(--subtle-pink); /* Uses the new #ffffff */
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(255, 105, 180, 0.1);
+            border: 1px solid #ffb6c1;
+        }
+
+        .section-title {
+            color: var(--primary-pink);
+            border-bottom: 2px solid var(--primary-pink);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        /* Home/About Section */
+        .bio-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 3px solid var(--primary-pink);
+        }
+
+        .bio-header h1 {
+            font-size: 1.8em;
+            color: var(--text-dark);
+            margin: 0;
+        }
+
+        .nickname {
+            display: block;
+            font-size: 0.6em;
+            color: var(--primary-pink);
+            font-weight: 400;
+        }
+        
+        /* Skills & Hobbies - COMPACT STYLING */
+        .skills-grid {
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 10px; 
+            justify-content: space-between;
+        }
+
+        .skill-group {
+            background-color: #fff0f5;
+            padding: 10px; 
+            border-radius: 8px;
+            border: 1px solid #ffc0cb;
+            flex: 1 1 21%; 
+            min-width: 150px; 
+            box-sizing: border-box;
+        }
+        
+        .skill-group h3 {
+            color: var(--primary-pink);
+            font-size: 0.95em; 
+            margin-top: 0;
+            border-bottom: 1px dashed #ffc0cb;
+            padding-bottom: 5px;
+            margin-bottom: 5px; 
+        }
+
+        .skill-list, .interest-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .skill-list li, .interest-list li {
+            padding: 2px 0; 
+            border-bottom: 1px dotted #ffc0cb;
+            color: var(--text-medium);
+            font-size: 0.85em; 
+        }
+        
+        .skill-list li:last-child, .interest-list li:last-child {
+            border-bottom: none;
+        }
+
+
+        /* Education Section */
+        .education-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding-left: 15px;
+            border-left: 3px solid var(--primary-pink);
+        }
+        
+        .education-item p {
+            margin: 0;
+        }
+        
+        .education-level {
+            font-weight: 600;
+            color: var(--primary-pink);
+        }
+
+        /* Projects Section */
+        .project-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ffc0cb;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+
+        .project-item h3 {
+            color: var(--text-dark);
+            margin-top: 0;
+        }
+
+        .project-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .toggle-btn {
+            background-color: var(--primary-pink);
+            color: var(--text-light);
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .toggle-btn:hover {
+            background-color: #e91e63;
+        }
+
+        .project-screenshot-container {
+            display: none; /* Initially hidden */
+            margin-top: 15px;
+            text-align: center;
+            border-top: 1px dashed #ffc0cb;
+            padding-top: 15px;
+        }
+
+        .project-screenshot-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 2px solid var(--primary-pink);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Contact Section */
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .contact-detail i {
+            color: var(--primary-pink);
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        .contact-info {
+            flex-grow: 1;
+        }
+
+        .copy-btn {
+            background-color: #f0f0f0;
+            color: var(--text-dark);
+            border: 1px solid #ddd;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            font-size: 0.8em;
+        }
+
+        .copy-btn:hover {
+            background-color: #e0e0e0;
+        }
+
+        .hyperlink-text {
+            color: var(--primary-pink);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .hyperlink-text:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--primary-pink);
+            color: var(--text-light);
+            margin-top: 30px;
+            font-size: 0.9em;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background-color: rgba(255, 105, 180, 0.3);
+            margin: 20px 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+             .skills-grid {
+                justify-content: space-around;
+            }
+            .skill-group {
+                flex: 1 1 45%; 
+                max-width: none;
+            }
+        }
+        @media (max-width: 600px) {
+            .bio-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .avatar {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            .education-item {
+                flex-direction: column;
+            }
+            .skills-grid {
+                flex-direction: column;
+            }
+            .skill-group {
+                flex: 1 1 100%; 
+                max-width: 100%;
+            }
+            .section-nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container">
+        
+        <section id="home" class="category-box">
+            <h2 class="section-title">About Me</h2>
+            <div class="bio-header">
+                <img src="https://i.ibb.co/tw5NY6DM/4d24cbee-491f-4187-afde-82789ce19910.jpg" alt="Chariz Anne's Avatar" class="avatar">
+                <h1>Chariz Anne V. Ceñidoza <span class="nickname">(Yanna / Cha Cha)</span></h1>
+            </div>
+            <p>
+                I'm a first-year BSIT student who loves to create. Since I enjoy drawing and crafting, I naturally focus on design in IT, practicing simple app and website layouts to make tech look good. I'm also actively learning coding (basic logic and syntax) to build the functional foundation. My main goal is to understand how tech works by doing, applying my creativity to develop real-world skills.
+            </p>
+            
+            <div class="inline-nav">
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="section-nav" style="display: none;">
+                <a href="#top" style="visibility:hidden;"></a>
+                <a href="#skills" style="visibility:hidden;"></a>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="skills" class="category-box">
+            <h2 class="section-title">Skills & Hobbies</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h3>Technical Skills</h3>
+                    <ul class="skill-list">
+                        <li>Turbo C</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
+
+                <div class="skill-group">
+                    <h3>Tools & Platforms</h3>
+                    <ul class="skill-list">
+                        <li>CodePen</li>
+                        <li>SCPK Editor</li>
+                        <li>GitHub</li>
+                        <li>One Compiler</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-group">
+                    <h3>Soft Skills</h3>
+                    <ul class="skill-list">
+                        <li>Creativity</li>
+                        <li>Teamwork</li>
+                        <li>Problem-Solving</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-group">
+                    <h3>Interests & Hobbies</h3>
+                    <ul class="interest-list">
+                        <li>Drawing</li>
+                        <li>Crafting</li>
+                        <li>Binge Watching</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section-nav">
+                <a href="#home"><i class="fas fa-arrow-left"></i> Previous: About</a>
+                <a href="#projects">Next: Projects <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="projects" class="category-box">
+            <h2 class="section-title">Projects</h2>
+            
+            <div class="project-item">
+                <h3>Personal Portfolio Website (This Website)</h3>
+                <p>Created a website using HTML, CSS, and JavaScript to showcase my projects and skills.</p>
+            </div>
+
+            <div class="project-item">
+                <h3>Pixel Art</h3>
+                <p>Created pixel art using C Language to showcase my creativity.</p>
+                <div class="project-actions">
+                    <button class="toggle-btn" data-target="project2-ss">View</button>
+                </div>
+                <div id="project2-ss" class="project-screenshot-container">
+                    <img src="https://i.ibb.co/v45WS4PF/ce502b0b-1e51-4116-84cd-0a131b07d695.jpg" alt="Pixel Art Example">
+                </div>
+            </div>
+            
+            <div class="project-item">
+                <h3>"Hello, World!"</h3>
+                <p>Successfully completed my first ever coding exercise in C Language, establishing a basic understanding of syntax and compilation.</p>
+                <div class="project-actions">
+                    <button class="toggle-btn" data-target="project3-ss">View</button>
+                </div>
+                <div id="project3-ss" class="project-screenshot-container">
+                    <img src="https://i.ibb.co/1t37hD2z/117a7c6e-5951-401e-83d1-4319185d7c20.jpg" alt="Hello World! Code Snippet">
+                </div>
+            </div>
+            
+            <div class="section-nav">
+                <a href="#skills"><i class="fas fa-arrow-left"></i> Previous: Skills</a>
+                <a href="#education">Next: Education <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="education" class="category-box">
+            <h2 class="section-title">Educational Journey</h2>
+            
+            <div class="education-item">
+                <p>East System Colleges of Rizal</p>
+                <p class="education-level">1st Year, BSIT (Current)</p>
+            </div>
+            
+            <div class="education-item">
+                <p>Binangonan Catholic College</p>
+                <p class="education-level">Senior High School</p>
+            </div>
+
+            <div class="education-item">
+                <p>Margarito A. Duavit Integrated School</p>
+                <p class="education-level">Junior High School</p>
+            </div>
+            
+            <div class="education-item">
+                <p>Binangonan Elementary School</p>
+                <p class="education-level">Elementary</p>
+            </div>
+
+            <div class="section-nav">
+                <a href="#projects"><i class="fas fa-arrow-left"></i> Previous: Projects</a>
+                <a href="#contact">Next: Contact <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="contact" class="category-box">
+            <h2 class="section-title">Connect With Me</h2>
+            
+            <div class="contact-detail">
+                <i class="fas fa-envelope"></i>
+                <span class="contact-info" id="email-info">charizcenidoza@gmail.com</span>
+                <button class="copy-btn" data-copy="charizcenidoza@gmail.com">Copy Email</button>
+            </div>
+            
+            <div class="contact-detail">
+                <i class="fas fa-phone"></i>
+                <span class="contact-info" id="phone-info">09931364849</span>
+                <button class="copy-btn" data-copy="09931364849">Copy Number</button>
+            </div>
+
+            <div class="contact-detail">
+                <i class="fab fa-facebook"></i>
+                <span class="contact-info">
+                    <a href="https://www.facebook.com/cacenidxzc" target="_blank" class="hyperlink-text">Facebook</a>
+                </span>
+            </div>
+
+            <div class="section-nav">
+                <a href="#education"><i class="fas fa-arrow-left"></i> Previous: Education</a>
+                <a href="#home">Back to Top <i class="fas fa-arrow-up"></i></a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Chariz Anne Ceñidoza</p>
+    </footer>
+
+    <script>
+        // --- JAVASCRIPT FOR INTERACTIVITY ---
+
+        // 1. Project Screenshot Toggle
+        document.querySelectorAll('.toggle-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const targetId = this.getAttribute('data-target');
+                const targetElement = document.getElementById(targetId);
+                
+                // Toggle display style
+                if (targetElement.style.display === 'block') {
+                    targetElement.style.display = 'none';
+                    this.textContent = 'View';
+                } else {
+                    targetElement.style.display = 'block';
+                    this.textContent = 'Hide';
+                }
+            });
+        });
+
+        // 2. Copy to Clipboard Functionality
+        document.querySelectorAll('.copy-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const textToCopy = this.getAttribute('data-copy');
+                
+                // Use the modern clipboard API
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    const originalText = this.textContent;
+                    this.textContent = 'Copied!';
+                    
+                    // Reset button text after 2 seconds
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Could not copy text: ', err);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
